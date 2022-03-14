@@ -1,9 +1,9 @@
-import { LightningElement } from 'lwc';
+import { LightningElement,track } from 'lwc';
 
 export default class ExploreTodoList extends LightningElement {
 
-        todo;
-        todoArray = [];
+        @track todo;
+        @track todoArray = [];
 
   
 
