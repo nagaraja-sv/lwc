@@ -3,11 +3,11 @@ import { LightningElement, track } from 'lwc';
 export default class EventParentComponent extends LightningElement {
 
      @track message;
-    handleReceiveData(){
+    handleReceiveData(event){
 
-        this.message = 'Heey !! I am being invoked';
+        this.message = event.detail;
 
-        console.log('Heey !! I am being invoked ');
+        console.log(event.detail);
 
     }
 
