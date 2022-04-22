@@ -1,5 +1,5 @@
 <template>
-    <div class="slds-box">
+    <div class="slds-box mainDiv">
         <template if:true={contacts.data}>
 
             <div class="slds-grid slds-wrap slds-gutters">
@@ -10,9 +10,9 @@
                     <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={con.Id}>
                         
 
-                        <lightning-card title={con.Name} key={con.id}>
+                        <lightning-card title={con.Account.Name} key={con.id}>
 
-                            <lightning-button label="ViewDetails" slot="action"></lightning-button>
+                            <lightning-button label="View Details" slot="actions" variant="brand"></lightning-button>
                             <p class="slds-p-horizontal_small"> {con.Name}</p>
                             <p class="slds-p-horizontal_small"> {con.Phone}</p>
                             <p class="slds-p-horizontal_small"> {con.Email}</p>
