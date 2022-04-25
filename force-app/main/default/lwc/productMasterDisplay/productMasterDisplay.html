@@ -1,0 +1,22 @@
+<template>
+    <div class="slds-box slds-p-around_small">
+       <!--<template if:true={allProducts}> -->
+                <div class="slds-grid slds-wrap slds-gutters">
+                    <template for:each={allProducts} for:item="prod">
+                            <div class="slds-col slds-size_1-of-3 slds-p-around_small" key={prod.Id}>
+                                <lightning-card title={prod.Name} key={prod.Id}>
+                                    <lightning-button variant="brand" label="View Details" slot="actions">
+                                    </lightning-button>
+                                    <p class="slds-p-around_small">{prod.Description}</p>
+                                    <p class="slds-p-around_small">{prod.ProductCode}</p>
+                                    <p key={prod.Id} slot="footer">
+                                        {prod.Family}
+                                    </p>
+                                </lightning-card>
+                            </div>
+                    </template>
+                </div>
+       <!-- </template> -->
+    </div>
+    
+</template>
