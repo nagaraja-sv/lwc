@@ -9,7 +9,7 @@ public with sharing class caseManager {
 
                 string searchCase = '%'+caseNumber+'%';
 
-                return [SELECT ID,Account.name,CaseNumber,Origin,IsClosedOnCreate,Description FROM Case WHERE caseNumber like: searchCase];
+                return [SELECT ID,Account.name,CaseNumber,Origin,IsClosedOnCreate,Description,Status,Priority,Subject,Is_Closed__c FROM Case WHERE caseNumber like: searchCase];
                 
             }else {
                 return NULL;
@@ -18,4 +18,23 @@ public with sharing class caseManager {
             throw new AuraHandledException(e.getMessage());
         }
     }
+
+    @AuraEnabled
+    public static string closedCase(string CaseId){
+        string message;
+        try {
+            case cs = new case(Id=caseId);
+            cs.Is_Closed__c = true;
+
+            update cs;
+            message = 'Success';
+            
+
+            
+        } catch (Exception e) {
+            throw new AuraHandledException(e.getMessage());
+        }
+        return message;
+    }
+
 }
