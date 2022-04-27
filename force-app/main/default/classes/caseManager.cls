@@ -25,6 +25,7 @@ public with sharing class caseManager {
         try {
             case cs = new case(Id=caseId);
             cs.Is_Closed__c = true;
+            cs.Status = 'Closed';
 
             update cs;
             message = 'Success';
