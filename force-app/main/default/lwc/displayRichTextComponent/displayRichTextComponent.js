@@ -18,8 +18,9 @@ export default class DisplayRichTextComponent extends LightningElement {
         and pass this to apex class' method via implcit call
     */
     saveAsPdf(){
-        const editor = this.template.querySelector('lightning-input-rich-text');
+        const editor = this.template.querySelector('c-dispaly-rich-text-component');
         
+        log.console(editor);
         //implicit calling apex method
         generatePDF({txtValue: editor.value})
         .then((result)=>{
