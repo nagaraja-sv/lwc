@@ -1,0 +1,40 @@
+<template>
+
+    <div class="slds-box" style=background-color:lightsteelblue>
+
+        <lightning-record-edit-form object-api-name={caseObject}>
+            
+           <div class="slds-grid slds-wrap slds-gutters">
+
+                <div class="slds-col slds-size_1-of-3 slds-p-around-small">
+
+                    <lightning-input-field field-name={statusField}> </lightning-input-field>
+                </div>
+
+                    <div class="slds-col slds-size_1-of-3 slds-p-around-small">
+                    <lightning-input-field field-name={originFiled}> </lightning-input-field>
+
+                </div>
+
+
+                <div class="slds-col slds-size_1-of-3 slds-p-around-small">
+                    <lightning-input-field field-name={reasonFiled}> </lightning-input-field>
+
+                </div>
+
+               
+                </div>
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <lightning-input-field field-name={subjectField}> </lightning-input-field>
+                        <lightning-input-field field-name={descriptionField}> </lightning-input-field>
+
+                    </div>
+
+
+           </div>
+        </lightning-record-edit-form>
+
+    </div>
+    
+</template>
