@@ -1,0 +1,11 @@
+<template>
+    
+    <div class="slds-box" style="background-color:blanchedalmond;color:red">
+        Create Account with Wire Adapter
+        <lightning-input label="Enter Account Name" name="accname" type="text" required onchange={handleChange}></lightning-input>
+        <lightning-input label="Enter Account Phone" name="accphone" type="text" required onchange={handleChange}></lightning-input>
+        <lightning-input label="Enter Account Industry" name="accindustry" type="text" required onchange={handleChange}></lightning-input>
+        <lightning-input label="Enter Account No of Employees" name="accemp" type="text" required onchange={handleChange}></lightning-input>
+        <lightning-button label="Create Account" onclick={createAcoount} variant="brand"></lightning-button>
+    </div>
+</template>
