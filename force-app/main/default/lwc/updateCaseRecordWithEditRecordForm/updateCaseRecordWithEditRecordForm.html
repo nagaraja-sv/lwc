@@ -1,0 +1,77 @@
+<template>
+
+    <div class="slds-box" style=background-color:lightsteelblue>
+        <lightning-record-edit-form object-api-name={caseObject} record-id={caseRecordId} onsuccess={handleSuccess}>
+            <lightning-messages></lightning-messages>
+
+           <div class="slds-grid slds-wrap slds-gutters">
+
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                    <lightning-input-field field-name={statusField}> </lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                    <lightning-input-field field-name={originFiled}> </lightning-input-field>
+                </div>
+
+                <div class="slds-col slds-size_1-of-3 slds-p-around_small">
+                    <lightning-input-field field-name={reasonFiled}> </lightning-input-field>
+                </div>
+            </div>
+
+                <div class="slds-grid">
+                    <div class="slds-col">
+                        <lightning-input-field field-name={addiotnalField} value={origialAddtional}> </lightning-input-field>
+                        <lightning-input-field field-name={subjectField}> </lightning-input-field>
+                        <lightning-input-field field-name={descriptionField}> </lightning-input-field>
+                    </div>
+                </div>
+
+                <div class="slds-align_absolute-center">
+                    <lightning-button type="cancel" class="slds-p-around_small"  variant="brand" label="Cancel" onclick={handleCancel}> </lightning-button> 
+                    <lightning-button type="submit" variant="brand" label="Update Case"> </lightning-button>
+                    
+                </div>
+
+        </lightning-record-edit-form>
+
+    </div>
+    
+</template>
+
+<!--
+
+
+
+    
+    
+Create Record using lightning-record-edit form base Component
+
+	- Why to use Lightning record edit form to create the record
+		○ If we want to customize form layout or predefined fields we can use lightning edit form 
+
+
+Create a Record 
+
+Lightning-record-edit-form 
+
+	- Customize Form Layout, Predefined field values 
+	
+	- Customize rendering of data
+	
+	- Editable fields => lightning input field 
+	
+	- Read-only fields => lighting -output-field
+	
+	- Handles field level validation error and LDS error automatically.
+	
+	- Lighting- message to display error messages 
+	
+	- Doesn't provide own Save and Cancel buttons 
+	
+	- To Reset form fields use reset()
+	
+	- Event : error, load , submit , success 
+
+Implement LDS, Not Required Apex to create , take care FLS and sharing. 
+-->

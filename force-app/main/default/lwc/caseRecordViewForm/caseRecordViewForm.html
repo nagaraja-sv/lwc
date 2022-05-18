@@ -1,0 +1,38 @@
+<template>
+
+    <div class="slds-box" style="background-color:beige;">
+
+        <lightning-record-form
+        record-id={recordId}
+        object-api-name={caseObject}
+        layout-type="Compact"
+        mode="Edit"
+        columns="2">
+    </lightning-record-form>
+
+    </div>
+
+    <div class="slds-box" style="background-color: cornflowerblue;">
+        <lightning-record-view-form object-api-name={caseObject} record-id={recordId}>
+            <lightning-output-field field-name={caseNumberField} ></lightning-output-field>
+            <lightning-output-field field-name={subjectField}></lightning-output-field>
+            <lightning-output-field field-name={caseDescField}></lightning-output-field>
+        </lightning-record-view-form>
+    </div>
+
+    <div class="slds-box" style="background-color:honeydew">
+
+        <lightning-record-form
+            record-id={recordId}
+            object-api-name={caseObject}
+            layout-type="Full"
+            mode="view"
+            columns="2">
+        </lightning-record-form>
+
+    </div>
+
+
+   
+    
+</template>
