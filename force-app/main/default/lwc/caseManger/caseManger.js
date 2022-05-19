@@ -8,8 +8,10 @@ export default class CaseManger extends LightningElement {
     cases;
     errorDetails;
     caseCloseMessage;
+    showCaseComment;
 
     caseNumberChange(event){
+       // this.showCaseComment = false;
         this.searchCaseNumber = event.target.value;
         console.log('this.searchCaseNumber'+this.searchCaseNumber);
         fetchCaseDetails({caseNumber:this.searchCaseNumber})
@@ -37,6 +39,18 @@ export default class CaseManger extends LightningElement {
 
             this.errorDetails = error;
         })
+
+    }
+
+    newCommentAdd(event){
+
+        console.log(this.caseId);
+        this.showCaseComment = true;
+        this.caseId = event.target.name;
+        console.log(this.caseId);
+        this.template.querySelector('c-case-comment-cmp').setCaseRecordId(this.caseId);
+        //console.log('======>temp '+temp);
+        //.setCaseRecordId(this.caseId);
 
     }
 }

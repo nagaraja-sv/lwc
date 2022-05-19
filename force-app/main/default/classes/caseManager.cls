@@ -40,17 +40,12 @@ public with sharing class caseManager {
 
     @AuraEnabled
     public static string addCaseComment(string caseId, string cBody){
-        try {
-
-            if (string.isNotBlank(caseId) && string.isNotBlank(cBody) ) {
-                CaseComment comm = new CaseComment(parentId=caseId,CommentBody=cBody);
-                insert comm;
-            }
-            return 'success';
-            
-        } catch (Exception e) {
-            throw new AuraHandledException(e.getMessage());
+              
+        if(string.isNotBlank(caseId) && String.isNotBlank(cBody)){
+            CaseComment comm = new CaseComment(parentId=caseId,CommentBody=cBody);
+            insert comm;
         }
-    }
+        return 'success';
 
+}
 }

@@ -7,9 +7,9 @@ export default class CaseCommentCmp extends LightningElement {
     caseRecordId;
     caseCommentBody;
 
-    @api
-    setCaseRecordId(cid){
+    @api setCaseRecordId(cid){
         this.caseRecordId = cid;
+        alert(this.caseRecordId);
     }
 
     handleChnage(event){
@@ -23,32 +23,31 @@ export default class CaseCommentCmp extends LightningElement {
 
     createCaseComment(event){
 
+        alert('hi');
+
+        console.log('========>'+this.caseRecordId);
+
+        console.log('inside createCaseComment this.caseRecId'+this.caseRecordId);
+        console.log('inside createCaseComment this.caseCommentBody'+this.caseCommentBody);
+        
         addCaseComment({caseId:this.caseRecordId,cBody:this.caseCommentBody})
-        .then(result=>{
+        .then(result=>{          
             const evt = new ShowToastEvent({
-
-                title : 'Case Created',
-                message: 'Case Comment is added ',
-                variant:'Success'
-    
+                title :'success',
+                message: 'Case Comment added',
+                variant:"success"
             });
             this.dispatchEvent(evt);
-
-
         })
-        .catch(error=>{
-
+        .error(error=>{
             const evt = new ShowToastEvent({
-
-                title : 'Error',
-                message: 'Case Comment is not added ',
-                variant:'error'
-    
+                title :'Error',
+                message: 'Some exception added',
+                variant:"Error"
             });
             this.dispatchEvent(evt);
-
         })
+    }
 
     }
 
-}
