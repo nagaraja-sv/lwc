@@ -22,6 +22,7 @@ public with sharing class createAccountContactCls {
     }
 
     public class AccountContactListWrapper{
+        
 
         public account accRecord{get;set;}
         public list<contact> contactList{get;set;}
