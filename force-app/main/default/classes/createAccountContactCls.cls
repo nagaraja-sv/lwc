@@ -1,10 +1,10 @@
 public with sharing class createAccountContactCls {
 
     @auraEnabled(cacheable=true)
-    public static list<AccountContactListWrapper> createAccountContactCls() {
+    public static list<AccountContactListWrapper> getAccountContactCls() {
 
         list<AccountContactListWrapper> accWrapperList = new list<AccountContactListWrapper>();
-        list<Account> accList = [SELECT ID,Name,(SELECT Id,FirstName,LastName,Email,MobilePhone from contacts) From Account];
+        list<Account> accList = [SELECT Id,Name,(SELECT Id,FirstName,LastName,Email,MobilePhone from contacts) From Account];
 
         if (!accList.isEmpty()) {
 
@@ -22,10 +22,12 @@ public with sharing class createAccountContactCls {
     }
 
     public class AccountContactListWrapper{
-        
 
+        @AuraEnabled
         public account accRecord{get;set;}
+        @AuraEnabled
         public list<contact> contactList{get;set;}
+        @AuraEnabled
         public integer contactCount {get;set;}
     }
 }

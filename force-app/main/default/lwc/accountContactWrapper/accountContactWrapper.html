@@ -1,0 +1,44 @@
+<template>
+
+    <lightning-card title="Account With Contact using Wrapper class" icon-name="standard:omni_supervisor">
+
+        <div class="slds-var-m-around_medium">
+
+            <template if:true={accountwithcontact}>
+
+                <template for:each={accountwithcontact} for:item="accCon">
+
+                    <lightning-badge style="color:red" label={accCon.accRecord.Name} icon-name="standard:Account" key={accCon.accRecord.Id}>
+
+                    </lightning-badge>
+
+                    <span  key={accCon.accRecord.Id}> <strong> Total Associated Contacts : </strong>accCon.contactCount</span>
+
+                    <div class="slds-grid slds-gutters" key={accCon.accRecord.Id}>
+
+                        <template for:each={accCon.contactList} for:item="con">
+
+                            <div class="slds-col slds-size_1-of-3" key={con.Id}>
+
+                                <lightning-card> 
+
+                                    <p class="slds-m-horizontal_xxx-small"><strong>FirstName:</strong>{con.FirstName}</p>
+                                    <p class="slds-m-horizontal_xxx-small"><strong>LastName:</strong>{con.LastName}</p>
+                                    <p class="slds-m-horizontal_xxx-small"><strong>MobilePhone:</strong>{con.MobilePhone}</p>
+                                    <p slot="footer"><strong>Email:</strong>{con.Email}</p>
+
+                                </lightning-card>
+
+                            </div>
+                        </template>
+
+                    </div>
+
+                </template>
+
+            </template>
+        </div>
+
+    </lightning-card>
+    
+</template>
