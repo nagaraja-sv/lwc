@@ -1,0 +1,53 @@
+<template>
+
+    <lightning-layout multiple-rows style="background-color:lavender;">
+
+        <lightning-layout-item padding="around-small">
+
+            <div class="header-column">
+
+                <lightning-combobox label="Locality" variant="labe;-stacked" field-level-help="Search Proprty Based on Locality" 
+                    value={location} options={locationOptions} placeholder="Select Locality"></lightning-combobox>
+
+            </div>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small">
+
+            <div class="header-column">
+
+                <lightning-combobox label="No of Bed Rooms" variant="labe;-stacked" field-level-help="Search Proprty Based on No of bed Rooms" 
+                    value={noOfBedRooms} options={noOfBedRoomsOptions} placeholder="Select Locality"></lightning-combobox>
+
+            </div>
+
+        </lightning-layout-item>
+
+        <lightning-layout-item padding="around-small">
+
+            <div class="header-column">
+
+                <lightning-combobox label="No of BathRoom" variant="labe;-stacked" field-level-help="Search Proprty Based on No of Bath Rooms" 
+                    value={noOfBathRooms} options={noOfBathRoomsOptions} placeholder="Select Batchrooms"></lightning-combobox>
+
+            </div>
+
+        </lightning-layout-item>
+
+
+        <lightning-layout-item padding="around-small">
+
+            <div class="header-column">
+
+                <lightning-input type="number" label="Maximum Budget" placeholder="Enter maximum Budget" variant="labe;-stacked" field-level-help="Search Proprty Based on Revenue" 
+                value={maxBudget}>
+
+                </lightning-input>
+            </div>
+
+        </lightning-layout-item>
+
+    </lightning-layout>
+    
+</template>
