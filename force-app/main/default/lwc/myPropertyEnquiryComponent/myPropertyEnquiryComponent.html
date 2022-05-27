@@ -1,0 +1,25 @@
+<template>
+    
+<lightning-card title="Submit your enquiry" icon-name="standard:contact">
+
+    <div class="slds-p-around_small">
+
+        <lightning-record-edit-form object-api-name={objectApiName} layout-type="compact" onsuccess={handleSuccess}>
+
+            <lightning-input-field field-name="Property__c" disabled value={propertyId} variant="label-stacked"></lightning-input-field>
+            <lightning-input-field field-name="Name__c"  variant="label-stacked"></lightning-input-field>
+            <lightning-input-field field-name="Email__c" variant="label-stacked"></lightning-input-field>
+            <lightning-input-field field-name="Phone__c" variant="label-stacked"></lightning-input-field>
+            <lightning-input-field field-name="Message__c" variant="label-stacked"></lightning-input-field>
+
+            <lightning-button type="submit" name="update" variant="brand" label="Submit for Enquiry" class="slds-m-top_small">
+                
+            </lightning-button>
+
+        </lightning-record-edit-form>
+
+    </div>
+
+</lightning-card>
+
+</template>

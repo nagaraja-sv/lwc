@@ -7,6 +7,10 @@ export default class BmhMyPropertyResult extends LightningElement {
         @track properties;
         @track propertiesFound;
         @track propid;
+        @track openOwnerDetails=false;
+        @track propOwnerId;
+        @track openenquiryDetails=false;
+        @track feedbackPropertyId;
           
        
         @wire(getLatestProperty)
@@ -33,6 +37,25 @@ export default class BmhMyPropertyResult extends LightningElement {
                 variant:variant,
             });  
             this.dispatchEvent(evt);  
+        }
+        ownerDetailsClick(event){
+            this.propOwnerId = event.target.value;
+            this.openOwnerDetails=true;
+
+        }
+
+        enquiryrDetailsClick(event){
+            this.openenquiryDetails=true;
+            this.feedbackPropertyId = event.target.value;
+
+        }
+        closeEnquiryModel(){
+            this.openenquiryDetails=false;
+        }
+
+        closeFeddbackModel(){
+          this.openOwnerDetails=false;
+
         }
     }
 
